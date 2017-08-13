@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+    <div> 
+        <h1>Thanks,@Model.Name!</h1>
+    </div>
+    <div>
+        @if(Model.willAttend==true)
+        {
+            @:It' great that you're coming.
+        }
+        else
+        {
+            @:Sorry to hear that you can't make it.
+        }
+    </div>
+</body>
+</html>

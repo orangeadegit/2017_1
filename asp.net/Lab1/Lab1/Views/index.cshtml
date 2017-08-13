@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>index</title>
+    <style>
+        .btn a {color:white;text-decoration:none;}
+        body{background-color:#f1f1f1;}
+    </style>
+</head>
+<body>
+    <div class="text-center"> 
+        <h1>
+            @ViewBag.Greeting World(from the view)
+        </h1>
+        <div>
+            @Html.ActionLink("RSVP Now","RSVPForm")
+        </div>
+    </div>
+</body>
+</html>

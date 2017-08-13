@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="text-center"> 
+        <h1>Thanks,@Model.Name!</h1>
+    </div>
+    <div class="text-center">
+        @if(Model.willAttend==true)
+        {
+            @:It' great that you're coming.
+        }
+        else
+        {
+            @:Sorry to hear that you can't make it.
+        }
+        @{
+            try
+            {
+                WebMail.SmtpServer = "smtp-mail.outlook.com";
+                WebMail.SmtpPort = 587;
+                WebMail.EnableSsl = true;
+                WebMail.UserName = "x1204329875@outlook.com";
+                WebMail.Password = "wectivocu?!0";
+                WebMail.From = "x1204329875@outlook.com";
+                WebMail.Send("1204329875@qq.com", "RSVP Notification", "Notification coming!");
+
+            }
+            catch (Exception)
+            {
+                @:<b>Sorry-we can not send the email to you !</b>
+            }
+        }
+    </div>
+</body>
+</html>
+
